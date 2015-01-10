@@ -1,10 +1,11 @@
 ﻿#pragma strict
 
-var hp : int = 100;
-function onTriggerEnter2D (other : Collider2D) {
-	if(other.tag == "Monster") {
-	}
-}
-function Update () {
+var hp : int = 500;
 
+function Damage (atk : int) {
+	hp -= atk;
+}
+
+function Update () {
+	if(hp <= 0)Destroy(gameObject);
 }

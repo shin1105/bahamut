@@ -3,9 +3,7 @@
 var prefab : GameObject;
 
 function SummonMonster () {
-	Instantiate(prefab, GameObject.Find("e").transform.position, Quaternion.identity);
-}
-
-function Update () {
-
+	if(GameObject.Find("Energy").GetComponent(Energy).SpendEnergy(1)) { 
+	Instantiate(prefab, GameObject.Find("Mymonborn").transform.position, Quaternion.identity);
+	}
 }
